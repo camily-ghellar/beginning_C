@@ -24,24 +24,26 @@ int main(){
   	 }
   	 else{
    		switch (oper){
-       			case '/':
+       		case '/':
        		result_num = num1*den2;
        		result_den = den1*num2;
        		aux1=result_num;
        		aux2=result_den;
-       		while (aux2 != 0) {
-             	int resto = aux1 % aux2;
+
+       		do{
+				int resto = aux1 % aux2;
               	aux1 = aux2;
               	aux2 = resto;
- }
-            	mdc = aux1;
-            	result_num = result_num / mdc;
-            	result_den = result_den / mdc;
-            	if(result_den==1){
-              		printf("%d/%d / %d/%d = %d", num1, den1, num2, den2, result_num);
+ 			}while (aux2 != 0);
+
+            mdc = aux1;
+            result_num = result_num / mdc;
+            result_den = result_den / mdc;
+            if(result_den==1){
+            	printf("%d/%d / %d/%d = %d", num1, den1, num2, den2, result_num);
             	}
-            	else{
-       		printf("%d/%d / %d/%d = %d/%d", num1, den1, num2, den2, result_num, result_den);
+            else{
+       			printf("%d/%d / %d/%d = %d/%d", num1, den1, num2, den2, result_num, result_den);
             	}
        	break;
       		 
@@ -50,19 +52,21 @@ int main(){
        		 result_den = den1*den2;
        		 aux1=result_num;
        		 aux2=result_den;
-       		 while (aux2 != 0) {
+
+       		 do{
               	int resto = aux1 % aux2;
               	aux1 = aux2;
               	aux2 = resto;
-}
-            	mdc = aux1;
-            	result_num = result_num / mdc;
-            	result_den = result_den / mdc;
-            	if(result_den==1){
-              		printf("%d/%d * %d/%d = %d", num1, den1, num2, den2, result_num);
+			}while (aux2 != 0);
+
+            mdc = aux1;
+        	result_num = result_num / mdc;
+        	result_den = result_den / mdc;
+        	if(result_den==1){
+           		printf("%d/%d * %d/%d = %d", num1, den1, num2, den2, result_num);
             	}
-            	else{
-       		printf("%d/%d * %d/%d = %d/%d", num1, den1, num2, den2, result_num, result_den);
+           	else{
+   				printf("%d/%d * %d/%d = %d/%d", num1, den1, num2, den2, result_num, result_den);
        		 break;
       		 
        		 case '+':
@@ -70,19 +74,21 @@ int main(){
        		 result_den = den1*den2;
        		 aux1=result_num;
        		 aux2=result_den;
-       		 while (aux2 != 0) {
+
+       		 do{
               	int resto = aux1 % aux2;
               	aux1 = aux2;
               	aux2 = resto;
-}
-            	mdc = aux1;
-            	result_num = result_num / mdc;
-            	result_den = result_den / mdc;
-            	if(result_den==1){
-                	printf("%d/%d + %d/%d = %d", num1, den1, num2, den2, result_num);
+}			while (aux2 != 0);
+
+            mdc = aux1;
+        	result_num = result_num / mdc;
+        	result_den = result_den / mdc;
+        	if(result_den==1){
+           		printf("%d/%d + %d/%d = %d", num1, den1, num2, den2, result_num);
             	}
-            	else{
-       		printf("%d/%d + %d/%d = %d/%d", num1, den1, num2, den2, result_num, result_den);
+           	else{
+       			printf("%d/%d + %d/%d = %d/%d", num1, den1, num2, den2, result_num, result_den);
             	}
        		 break;
       		 
@@ -91,19 +97,21 @@ int main(){
        		 result_den = den1*den2;
        		 aux1=result_num;
        		 aux2=result_den;
-       		 while (aux2 != 0) {
+
+       		 do{
               	int resto = aux1 % aux2;
               	aux1 = aux2;
               	aux2 = resto;
-}
-            	mdc = aux1;
-            	result_num = (-1*result_num) / mdc;
-            	result_den = (-1*result_den) / mdc;
-            	if(result_den==1){
-                	printf("%d/%d - %d/%d = %d", num1, den1, num2, den2, result_num);
+			}while (aux2 != 0);
+
+            mdc = aux1;
+            result_num = (-1*result_num) / mdc;
+            result_den = (-1*result_den) / mdc;
+            if(result_den==1){
+            		printf("%d/%d - %d/%d = %d", num1, den1, num2, den2, result_num);
             	}
-            	else{
-       		 printf("%d/%d - %d/%d = %d/%d", num1, den1, num2, den2, result_num, result_den);
+            else{
+       			printf("%d/%d - %d/%d = %d/%d", num1, den1, num2, den2, result_num, result_den);
             	}
        		 break;
       		 
@@ -111,11 +119,9 @@ int main(){
        		 printf("Erro.");
        		 }
    		 }
-  	 	}
+  	 }
   		 
     } while(decisao=='Y');
 
     return 0;
 }
-
-
